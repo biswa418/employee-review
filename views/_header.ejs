@@ -1,0 +1,34 @@
+<header>
+    <div id="logo">
+        <a href="/">
+            <i class="fa-solid fa-user-astronaut"></i>
+            <h1>Placement Cell</h1>
+        </a>
+    </div>
+
+    <div id="users-action">
+        <ul>
+            <% if (locals.user){%>
+                <li>
+                    <a href="/users/Profile/<%= user.id %>">
+                        <%= user.name %>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/users/sign-out">Sign out</a>
+                </li>
+
+                <%} else{%>
+                    <li>
+                        <a href="/users/sign-in">Sign in</a>
+                    </li>
+
+                    <li>
+                        <a href="/users/sign-up">Sign up</a>
+                    </li>
+
+                    <%}%>
+        </ul>
+    </div>
+</header>

@@ -1,11 +1,12 @@
-module.exports.home = async function (request, response) {
+const passport = require('passport');
 
-    try {
+module.exports.home = async function (request, response) {
+    if (request.isAuthenticated()) {
         return response.render('home', {
             title: "Placement Cell | Home",
         });
 
-    } catch (err) {
-        console.log("error in loading home page", err);
+    } else {
+        return response.redirect('/users/sign-in');
     }
 }

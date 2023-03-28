@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/css/signin.css">
+<link rel="icon" style="scale: 1;" type="image/x-icon" href="../images/favicon.ico">
+
+
+<div id="logo-res">
+    <a href="/">
+        <i class="fa-solid fa-user-astronaut"></i>
+        <h1>Placement Cell</h1>
+    </a>
+</div>
+
+<div id="container">
+    <h2>
+        Hi,
+        Sign In !
+    </h2>
+    <div id="form-container">
+        <form action="/users/create-session" method="post">
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Password" name="password" required>
+
+            <button class="btn" type="submit">Sign in</button>
+        </form>
+    </div>
+
+    <div>
+        <p>
+            Don't have an account? &nbsp;<a href="/users/sign-up">Create one?</a>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<footer>
+    <p>
+        Personal Copyright Ltd
+    </p>
+
+    <div class="links">
+        <a href="/">Home</a>
+
+        <%if(locals.user) { %>
+            <a href="/users/Profile/<%= user.id %>">Profile</a>
+            <%}%>
+
+    </div>
+
+</footer>

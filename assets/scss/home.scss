@@ -1,0 +1,37 @@
+body {
+    #home-container {
+        display: flex;
+
+        section {
+            margin: 1.4rem;
+            color: white;
+            background-color: #1b2730;
+            border-radius: 1rem;
+            height: 100%;
+        }
+
+        #feed-posts {
+            width: 70%;
+            padding: 1rem;
+        }
+
+        #user-friends {
+            width: 30%;
+            padding: 1rem;
+        }
+    }
+
+    textarea {
+        background-color: #314758;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 1rem;
+        resize: none;
+    }
+
+    textarea:focus-visible {
+        outline: none;
+        border: none;
+    }
+}

@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/css/signin.css">
+<link rel="icon" style="scale: 1;" type="image/x-icon" href="../images/favicon.ico">
+
+
+<div id="logo-res">
+    <a href="/">
+        <i class="fa-solid fa-ice-cream"></i>
+        <h1>Codeial</h1>
+    </a>
+</div>
+
+<div id="container">
+    <h2>
+        Create a new account
+    </h2>
+    <div id="form-container">
+        <form action="/users/create" method="post">
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="password" placeholder="Confirm Password" name="confirm_password" required>
+
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+
+    <div>
+        <p>
+            Already have an account? &nbsp; <a href="/users/sign-in"> Sign in </a>
+        </p>
+    </div>
+
+</div>

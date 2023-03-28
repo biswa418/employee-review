@@ -1,0 +1,167 @@
+#layout-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #logo-res {
+        display: none;
+        position: absolute;
+        top: 10vh;
+        color: #1ba1f0;
+        font-size: 2rem;
+
+        h1 {
+            font-size: 2.1rem;
+            margin: 0 10px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    #container {
+        height: 75vh;
+        aspect-ratio: 0.8;
+        margin: 20px;
+        background-color: #1b2730;
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            color: white;
+        }
+
+        #form-container {
+            width: 98%;
+
+
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: white;
+
+                input {
+                    width: 85%;
+                    background-color: #314758;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 5px;
+                    margin: 4px;
+                }
+
+                input:focus-visible {
+                    outline: none;
+                    border: none;
+                }
+
+                button {
+                    margin-top: 1rem;
+                    font-size: 1.2rem;
+                    width: 85%;
+                    border-radius: 5px;
+                    padding: 5px;
+                    border: none;
+                    color: white;
+                    background-color: #1ba1f0;
+
+                }
+
+                button:hover {
+                    cursor: pointer;
+                    background-color: #178ccf;
+                }
+            }
+        }
+
+        div {
+            width: 98%;
+
+            p {
+                display: flex;
+                justify-content: center;
+                color: white;
+
+                button {
+                    width: 85%;
+                    font-size: 1.2rem;
+                    border-radius: 5px;
+                    padding: 5px;
+                    border: none;
+                    background-color: white;
+
+                    i {
+                        color: #1ba1f0;
+                    }
+                }
+
+                button:hover {
+                    cursor: pointer;
+                    background-color: #e4e6e6;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #1ba1f0;
+                }
+            }
+
+        }
+
+
+    }
+
+    @media screen and (max-width: 720px) {
+
+        #logo-res {
+            display: block;
+        }
+
+        body {
+            background: linear-gradient(0deg, #041E42, #1F305E);
+        }
+
+        #container {
+            height: 60vh;
+            margin-top: 50px;
+            aspect-ratio: 0.5;
+            background-color: transparent;
+
+            #form-container {
+                width: 85vw;
+
+                form {
+                    input {
+                        width: 85vw;
+                    }
+
+                    button {
+                        width: 85vw;
+                    }
+                }
+            }
+
+            div {
+                width: 85vw;
+
+                p {
+                    width: 100%;
+
+                    button {
+                        width: 85vw;
+                    }
+                }
+
+            }
+        }
+    }
+}
