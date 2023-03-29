@@ -17,9 +17,10 @@
         <a href="/">Home</a>
 
         <%if(locals.user) { %>
-            <a href="/students/addStudent">Add Student <i class="fa-solid fa-user-plus"></i></a>
-            <a href="/interviews/addInterview">Add Interview <i class="fa-solid fa-square-plus"></i></a>
-            <%}%>
+            <% if(locals.user.isAdmin) { %>
+                <a href="/users/sign-up">Add Employee <i class="fa-solid fa-user-plus"></i></a>
+                <%}%>
+                    <%}%>
     </div>
 
 </footer>

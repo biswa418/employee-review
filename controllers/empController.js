@@ -36,6 +36,10 @@ module.exports.createUser = async function (req, res) {
 
 //render the sign up page
 module.exports.signup = function (req, res) {
+    if (!req.user.isAdmin) {
+        req.flash('error', 'Already logged in!');
+        return res.redirect('back');
+    }
     return res.render('sign_up', {
         title: "Employee Review | Sign up"
     });

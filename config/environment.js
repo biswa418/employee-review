@@ -18,19 +18,20 @@ const development = {
     morgan: {
         mode: 'dev',
         options: { stream: accessLogStream }
-    }
+    },
+    mongoURL: 'mongodb://127.0.0.1:27017/empReview_development'
 }
 
 const production = {
     name: 'production',
     asset_path: process.env.EMPREVIEW_ASSET_PATH,
     session_cookie_key: process.env.EMPREVIEW_SESSION_COOKIE_KEY,
-    db: process.env.EMPREVIEW_DB,
     morgan: {
         mode: 'combined',
         options: { stream: accessLogStream }
-    }
+    },
+    mongoURL: `mongodb+srv://admin:${process.env.EMPREVIEW_DB}@placement.jdhzqhg.mongodb.net/employee_review?retryWrites=true&w=majority`
 }
 
 
-module.exports = development;
+module.exports = eval(process.env.NODE_ENV) == undefined ? development : production;

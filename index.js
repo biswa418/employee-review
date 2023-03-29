@@ -17,47 +17,52 @@ const MongoStore = require('connect-mongo');
 const passportLocal = require('./config/passport-local-strategy');
 const customMware = require('./config/Notymiddleware');
 
-const srcDir = path.join(__dirname, 'assets', 'scss');
-const destDir = path.join(__dirname, 'assets', 'css');
+//helper to read files from manifest
+require('./config/helpers')(app);
 
-//convert scss to css
-fs.readdir(srcDir, (err, files) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
+if (env.name == 'development') {
+    const srcDir = path.join(__dirname, 'assets', 'scss');
+    const destDir = path.join(__dirname, 'assets', 'css');
 
-    files.forEach(file => {
-        if (!file.endsWith('.scss')) {
+    //convert scss to css
+    fs.readdir(srcDir, (err, files) => {
+        if (err) {
+            console.error(err);
             return;
         }
 
-        const filePath = path.join(srcDir, file);
-        const outputFile = file.replace(/\.scss$/, '.css');
-        const outputFilePath = path.join(destDir, outputFile);
-
-        sass.render({
-            file: filePath,
-            outputStyle: 'compressed'
-        }, (err, result) => {
-            if (err) {
-                console.error(err);
+        files.forEach(file => {
+            if (!file.endsWith('.scss')) {
                 return;
             }
 
-            fs.writeFile(outputFilePath, result.css.toString(), err => {
+            const filePath = path.join(srcDir, file);
+            const outputFile = file.replace(/\.scss$/, '.css');
+            const outputFilePath = path.join(destDir, outputFile);
+
+            sass.render({
+                file: filePath,
+                outputStyle: 'compressed'
+            }, (err, result) => {
                 if (err) {
                     console.error(err);
-                } else {
+                    return;
                 }
+
+                fs.writeFile(outputFilePath, result.css.toString(), err => {
+                    if (err) {
+                        console.error(err);
+                    } else {
+                    }
+                });
             });
         });
+        console.log(`SCSS compiled to CSS`);
     });
-    console.log(`SCSS compiled to CSS`);
-});
+}
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('assets'));
+app.use(express.static(env.asset_path));
 
 //use cookie parser 
 app.use(cookieParser());
@@ -84,7 +89,7 @@ app.use(session({
         secure: false
     },
     store: MongoStore.create({
-        mongoUrl: `mongodb://127.0.0.1:27017/${env.db}`,
+        mongoUrl: `${env.mongoURL}`,
         autoRemove: 'disabled'
     },
 

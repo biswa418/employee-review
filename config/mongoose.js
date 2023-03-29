@@ -5,7 +5,7 @@ const env = require('./environment');
 mongoose.set('strictQuery', false);
 
 //connect to db
-mongoose.connect(`mongodb://127.0.0.1:27017/${env.db}`);
+mongoose.connect(`${env.mongoURL}`);
 
 //connection establish
 const db = mongoose.connection;
