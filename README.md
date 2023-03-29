@@ -36,3 +36,5 @@ or
 <img src="./assets/images/emp_updated.png">
 
 - An employee can register, but only admin can make an employee an admin
+<img src="./assets/images/MakeAdmin.png">
+
