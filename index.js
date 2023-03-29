@@ -10,6 +10,8 @@ const sass = require('sass');
 //mongo
 const db = require('./config/mongoose');
 const session = require('express-session'); //session cookie
+const logger = require('morgan'); //logger - prod
+
 const passport = require('passport');       //auth
 const env = require('./config/environment');
 const flash = require('connect-flash');
@@ -66,6 +68,9 @@ app.use(express.static(env.asset_path));
 
 //use cookie parser 
 app.use(cookieParser());
+
+//prod logs
+app.use(logger(env.morgan.mode, env.morgan.options));
 
 //use the layouts
 app.use(expressLayouts);
