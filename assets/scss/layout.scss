@@ -5,7 +5,7 @@
 }
 
 * {
-    font-family: sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
 body {
@@ -15,6 +15,13 @@ body {
     padding: 0;
 
     #layout-main {
-        height: 90%;
+        height: 93%;
+        min-height: 95vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .w-50 {
+        width: 87% !important;
     }
 }

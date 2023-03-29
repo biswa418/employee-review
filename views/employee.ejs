@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<div id="home-container" class="mt-2">
+    <section id="feed">
+        <div class="heading d-flex justify-content-sm-between align-items-center">
+            <h3 class="home-heading">List of Employees</h3>
+            <p class="m-0">
+                <a href="/" class="me-2">Home</a>
+                <a href="/users/sign-up">Add <i class="fa-solid fa-user-plus"></i></a>
+            </p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>IsAdmin</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(emp of employees) { %>
+                    <tr>
+                        <td>
+                            <%= emp.name %>
+                        </td>
+                        <td>
+                            <%= emp.email %>
+                        </td>
+                        <td>
+                            <%= emp.isAdmin %>
+                        </td>
+                        <td>
+                            <a class="" href="/admin/delete/<%= emp.id%>"><i
+                                    class="m-1 mt-0 fa-solid fa-user-minus"></i></a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+
+    </section>
+
+</div>

@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<div id="home-container" class="mt-2">
+    <section id="feed">
+        <div class="heading d-flex justify-content-sm-between align-items-center">
+            <h3 class="home-heading">List of Reviews</h3>
+            <p class="m-0">
+                <a href="/" class="me-2">Home</a>
+                <a href="/users/sign-up">Add <i class="fa-solid fa-plus"></i></a>
+            </p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Feedback</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(emp of reviews) { %>
+                    <tr>
+                        <td>
+                            <%= emp.from.name %>
+                        </td>
+                        <td>
+                            <%= emp.to.name %>
+                        </td>
+                        <td>
+                            <%= emp.review %>
+                        </td>
+                        <td>
+                            <a class="" href="/review/delete/<%= emp.id%>"><i
+                                    class="m-1 mt-0 fa-solid fa-minus"></i></a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+
+    </section>
+
+</div>

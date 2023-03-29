@@ -1,15 +1,25 @@
 <footer>
-    <p>
-        Personal Copyright Ltd
-    </p>
+    <div class="d-flex align-items-center">
+        <p class="m-0 me-2">
+            Find more on &nbsp;|
+        </p>
+
+        <a class="socials" target="_blank" href="https://github.com/biswa418/employee-review.git">
+            <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a class="socials" target="_blank" href="https://www.linkedin.com/in/biswajeet-sutar-3862a6189/">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+    </div>
 
     <div class="links">
         <a href="/">Home</a>
 
         <%if(locals.user) { %>
-            <a href="/users/Profile/<%= user.id %>">Profile</a>
+            <a href="/students/addStudent">Add Student <i class="fa-solid fa-user-plus"></i></a>
+            <a href="/interviews/addInterview">Add Interview <i class="fa-solid fa-square-plus"></i></a>
             <%}%>
-
     </div>
 
 </footer>

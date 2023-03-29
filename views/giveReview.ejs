@@ -1,0 +1,30 @@
+<div id="body-container">
+    <h2 style="color: white;">
+        List of Reviews done
+    </h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(emp of reviews) { %>
+                <tr>
+                    <td>
+                        <%= emp.from.name %>
+                    </td>
+                    <td>
+                        <%= emp.to.name %>
+                    </td>
+                    <td>
+                        <%= emp.review %>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>

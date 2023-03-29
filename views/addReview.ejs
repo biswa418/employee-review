@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/css/details.css">
+<link rel="stylesheet" href="/css/home.css">
+
+<div class="form-signin w-50 m-auto">
+    <div class="m-3 text-light" style="margin-top: 20px">
+        <h2>Set Review</h2>
+    </div>
+
+    <form action="/admin/update" method="POST">
+        <div class="form-floating m-3">
+            <h5 style="color: white;">From:</h5>
+            <select id="From" class="form-select" name="from">
+                <% for(u of users) {%>
+                    <option name="placed" value="<%= u.id %>">
+                        <%= u.name %>
+                    </option>
+                    <%} %>
+            </select>
+        </div>
+
+        <div class="form-floating m-3">
+            <h5 style="color: white;">To:</h5>
+            <select id="To" class="form-select" name="to">
+                <% for(u of users) {%>
+                    <option name="placed" value="<%= u.id %>">
+                        <%= u.name %>
+                    </option>
+                    <%} %>
+            </select>
+        </div>
+
+        <div class="form-floating m-3">
+            <button class="w-100 btn btn-lg btn-primary " type="submit" value="Add Review">Add Review</button>
+        </div>
+
+        <div class="studentCardActions m-3 d-flex justify-content-end">
+            <div class="cardLinks">
+                <a href="/">Back</a>
+            </div>
+        </div>
+    </form>
+
+    <%- include('giveReview') %>
+</div>

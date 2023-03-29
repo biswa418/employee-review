@@ -1,37 +1,94 @@
 body {
-    #home-container {
+
+    #layout-main {
         display: flex;
+        // justify-content: center;
+        // align-items: center;
+    }
+
+
+    #home-container {
+        padding: 2rem;
+        color: white;
+        width: 90%;
+        border-radius: 2rem;
+        // background-color: #1b2730;
+        overflow: auto;
+
+        .home-heading {
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
 
         section {
-            margin: 1.4rem;
             color: white;
-            background-color: #1b2730;
-            border-radius: 1rem;
-            height: 100%;
+            margin-bottom: 4%;
+
+            a {
+                width: 50%;
+                margin-top: 0.5rem;
+            }
+
+            .area {
+                resize: none;
+                overflow: auto;
+            }
         }
 
-        #feed-posts {
-            width: 70%;
-            padding: 1rem;
-        }
+        .heading {
 
-        #user-friends {
-            width: 30%;
-            padding: 1rem;
+            a {
+                text-decoration: none;
+                color: #1ba1f0;
+            }
         }
     }
 
-    textarea {
-        background-color: #314758;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
         color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 1rem;
-        resize: none;
     }
 
-    textarea:focus-visible {
-        outline: none;
-        border: none;
+    th,
+    td {
+        border: 1px solid #283a47;
+        padding: 1rem;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            color: #1ba1f0;
+        }
+    }
+
+    th {
+        background-color: #21313b;
+        font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+        background-color: #273d4e;
+    }
+
+    tr:hover {
+        background-color: #30485a;
+    }
+
+    td:last-child {
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .w-50 {
+        width: 87% !important;
+    }
+
+    .heading {
+        justify-content: space-between;
     }
 }

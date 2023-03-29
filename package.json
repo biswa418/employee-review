@@ -33,6 +33,7 @@
     "nodemon": "^2.0.21",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
+    "rotating-file-stream": "^3.1.0",
     "sass": "^1.59.3"
   }
 }

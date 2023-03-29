@@ -1,8 +1,8 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express();
 const port = 8000;
 
-const cookieParser = require('cookie-parser');
 const expressLayouts = require('express-ejs-layouts');
 const fs = require('fs');
 const path = require('path');
@@ -81,9 +81,10 @@ app.use(session({
     cookie: {
         maxAge: (1000 * 200 * 60), //expiry of cookie in ms
         SameSite: 'None', //browser warns to deprecate it as a third party cookie
+        secure: false
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb://127.0.0.1:27017/placement_development',
+        mongoUrl: `mongodb://127.0.0.1:27017/${env.db}`,
         autoRemove: 'disabled'
     },
 

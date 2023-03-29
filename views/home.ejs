@@ -1,1 +1,65 @@
-<h1>Hello world!</h1>
+<link rel="stylesheet" href="/css/home.css">
+
+<div id="home-container">
+    <h3 class="home-heading">
+        Reviews Section
+    </h3>
+    <section>
+
+        <div class="d-flex justify-content-between">
+            <div class="form-signin w-50">
+                <form action="/review/create" method="POST">
+                    <h5 style="color: white;">To:</h5>
+                    <select id="From" class="form-select" name="from">
+                        <% for(u of current.sendReview) {%>
+                            <option name="placed" value="<%= u.id %>">
+                                <%= u.name %>
+                            </option>
+                            <%} %>
+                    </select>
+
+                    <div class="form-floating mt-3">
+                        <textarea name="review" class="form-control" style="color: grey;"
+                            placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="floatingTextarea2" style="color: grey;">Review</label>
+                    </div>
+
+                    <div class="form-input mt-3">
+                        <button class="w-100 btn btn-lg btn-primary " type="submit" value="Add Review">Add
+                            review</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div style="width: 40%">
+                <h5>Received Feedback: </h5>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Review</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(emp of reviews) { %>
+                            <tr>
+                                <td>
+                                    <%= emp.from.name %>
+                                </td>
+                                <td>
+                                    <%= emp.to.name %>
+                                </td>
+                                <td>
+                                    <%= emp.review %>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

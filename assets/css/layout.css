@@ -1,1 +1,1 @@
-*,*::after,*::before{box-sizing:border-box}*{font-family:sans-serif}body{background-color:#05141c;margin:0;font-family:sans-serif;padding:0}body #layout-main{height:90%}
+*,*::after,*::before{box-sizing:border-box}*{font-family:Roboto,sans-serif}body{background-color:#05141c;margin:0;font-family:sans-serif;padding:0}body #layout-main{height:93%;min-height:95vh}@media screen and (max-width: 768px){.w-50{width:87% !important}}

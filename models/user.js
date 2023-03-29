@@ -7,10 +7,27 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    name: {
+        type: String,
+        required: true
+    },
     password: {
         type: String,
         required: true
-    }
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false,
+        required: true
+    },
+    sendReview: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+    gotReview: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }]
 },
     {
         timestamps: true

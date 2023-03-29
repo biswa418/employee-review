@@ -48,6 +48,16 @@ header {
 
 @media screen and (max-width: 720px) {
     header {
-        visibility: hidden;
+        #logo {
+            a {
+                h1 {
+                    display: none;
+                }
+            }
+        }
+
+        .down {
+            display: none;
+        }
     }
 }
