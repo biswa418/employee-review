@@ -34,4 +34,4 @@ const production = {
 }
 
 
-module.exports = eval(process.env.NODE_ENV) == undefined ? development : production;
+module.exports = development;

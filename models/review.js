@@ -7,11 +7,13 @@ const reviewSchema = new mongoose.Schema({
     },
     from: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User' //who made the review
+        ref: 'User', //who made the review
+        required: true
     },
     to: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User' //whose name is on review
+        ref: 'User', //whose name is on review
+        required: true
     }
 }, {
     timestamps: true,

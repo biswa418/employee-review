@@ -73,11 +73,10 @@ module.exports.reviews = async function (req, res) {
                 let reviews = await Review.find({}).populate({
                     path: 'from',
                     select: '-password'
-                })
-                    .populate({
-                        path: 'to',
-                        select: '-password'
-                    });
+                }).populate({
+                    path: 'to',
+                    select: '-password'
+                });
 
                 return res.render('reviews', {
                     title: "Employee Review | Review page",
@@ -235,6 +234,13 @@ module.exports.deleteEmployee = async function (req, res) {
 
             if (req.user.isAdmin) {
                 await User.findByIdAndDelete(req.params.id);
+
+                let reviewsSent = await Review.find({ from: req.params.id });
+                let reviewsReceived = await Review.find({ to: req.params.id });
+
+                await Review.findByIdAndDelete(reviewsSent.id);
+                await Review.findByIdAndDelete(reviewsReceived.id);
+
                 return res.redirect('back');
             }
         }

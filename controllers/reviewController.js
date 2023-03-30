@@ -37,10 +37,11 @@ module.exports.delete = async function (req, res) {
         //find if user is admin
         if (!req.user.isAdmin) {
             req.flash('error', 'Insufficient preiviledges');
+            return res.redirect('back');
         }
 
         //find the review
-        await Review.findByIdAndDelete(req.query.id);
+        await Review.findByIdAndDelete(req.params.id);
 
         req.flash('success', 'Review deleted successfully');
         return res.redirect('back');
