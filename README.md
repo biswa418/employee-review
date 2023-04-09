@@ -12,6 +12,10 @@ or
 ## Find the demo on site - please give a bit time to load
 <a href="https://employee-review-jh1l.onrender.com/"> Hosted Link here </a>
 
+## Admin creds
+email - admin@email.com
+pass - Admin12
+
 ## Features to the site
 - Sign in / Sign up
 <img src="./assets/images/sign_in.png">
